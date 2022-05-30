@@ -1,0 +1,17 @@
+server:
+  port: 1010
+
+pg:
+  data-source:
+    host: localhost
+    port: 5432
+    name: test-db
+    username: postgres
+    password: demo
+    driverClassName: org.postgresql.Driver
+    jdbcUrl: jdbc:postgresql://${pg.data-source.host}:${pg.data-source.port}/${pg.data-source.name}
+
+spring:
+  jpa:
+    generate-ddl: true
+    hibernate.ddl-auto: create-drop

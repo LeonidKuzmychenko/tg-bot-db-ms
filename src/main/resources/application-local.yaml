@@ -13,5 +13,6 @@ pg:
 
 spring:
   jpa:
-    generate-ddl: true
-    hibernate.ddl-auto: create-drop
+    generate-ddl: false
+    hibernate.ddl-auto: validate
+    show-sql: true

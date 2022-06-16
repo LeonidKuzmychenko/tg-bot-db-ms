@@ -23,11 +23,11 @@ public class User {
     @JsonIgnore
     private Long id;
 
-    @Column(name = "chat_id")
+    @Column(name = "chat_id", unique = true, nullable = false, length = 50)
     @JsonIgnore
     private String chatId;
 
-    @Column(name = "command")
+    @Column(name = "command", unique = false, nullable = true, length = 255)
     private String command;
 
     @ManyToMany(fetch = FetchType.EAGER)

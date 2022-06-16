@@ -21,10 +21,10 @@ public class Serial {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "api_id")
+    @Column(name = "api_id", unique = true, nullable = false, length = 100)
     private String apiId;
 
-    @ManyToMany(mappedBy = "serials")
+    @ManyToMany(mappedBy = "serials", fetch = FetchType.LAZY)
     private Set<User> users = new HashSet<>();
 
     public Serial(String apiId) {
